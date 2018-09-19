@@ -1,10 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+// We want to test HeroesComponent because it is a cutom component
+import { HeroesComponent } from './heroes/heroes.component';
+//import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+
+
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      //likewise to app.module
       declarations: [
-        AppComponent
+        AppComponent,
+        HeroesComponent 
+        
       ],
     }).compileComponents();
   }));

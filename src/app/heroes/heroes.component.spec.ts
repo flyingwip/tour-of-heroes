@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HeroesComponent } from './heroes.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -8,7 +8,8 @@ describe('HeroesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroesComponent ]
+      declarations: [ HeroesComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   }));
@@ -21,5 +22,11 @@ describe('HeroesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have the hero name text equal to Windstorm', () => {
+
+    expect(component.hero.name).toBe('Windstorm');
+
   });
 });

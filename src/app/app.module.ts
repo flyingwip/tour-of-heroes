@@ -9,6 +9,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 //
 import { HeroService } from './hero.service';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
@@ -20,7 +21,8 @@ import { HeroService } from './hero.service';
   // imports array, which contains a list of external modules that the app needs.
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

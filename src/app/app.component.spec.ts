@@ -6,7 +6,10 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 import { HeroService } from './hero.service';
+import { AppRoutingModule } from './/app-routing.module';
 
+//This is for the AppRoutingModule
+import { APP_BASE_HREF } from '@angular/common';
 
 
 describe('AppComponent', () => {
@@ -18,8 +21,8 @@ describe('AppComponent', () => {
         HeroesComponent,
         HeroDetailComponent
       ],
-      imports: [FormsModule],
-      providers:[HeroService],
+      imports: [FormsModule, AppRoutingModule],
+      providers:[HeroService, {provide: APP_BASE_HREF, useValue: '/'}], // APP_BASE_HREF is for the AppRoutingModule
     }).compileComponents();
   }));
   it('should create the app', async(() => {

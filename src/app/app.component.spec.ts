@@ -5,6 +5,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
+import { HeroService } from './hero.service';
+
 
 
 describe('AppComponent', () => {
@@ -16,7 +18,8 @@ describe('AppComponent', () => {
         HeroesComponent,
         HeroDetailComponent
       ],
-      imports: [FormsModule]
+      imports: [FormsModule],
+      providers:[HeroService],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

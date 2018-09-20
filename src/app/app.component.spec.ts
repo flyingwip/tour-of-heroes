@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 // We want to test HeroesComponent because it is a cutom component
 import { HeroesComponent } from './heroes/heroes.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 
 
@@ -12,7 +13,8 @@ describe('AppComponent', () => {
       // likewise to app.module
       declarations: [
         AppComponent,
-        HeroesComponent
+        HeroesComponent,
+        HeroDetailComponent
       ],
       imports: [FormsModule]
     }).compileComponents();

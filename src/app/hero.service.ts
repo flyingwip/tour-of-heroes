@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HEROES } from './mock-heroes';
 import { Hero } from './hero';
 
+import { Observable } from 'rxjs';
+import { of } from 'rxjs/observable/of';
+
 
 // Dependency injection (DI), is an important application design pattern
 /*
@@ -20,8 +23,12 @@ export class HeroService {
 
   constructor() { }
 
-  getHeroes(): Hero[] {
-	return HEROES;
-  }  
+ //  getHeroes(): Hero[] {
+	// return HEROES;
+ //  }  
+
+	getHeroes(): Observable<Hero[]> {
+  		return of(HEROES);
+	}
 
 }

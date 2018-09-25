@@ -1,3 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+// Import the catchError symbol from rxjs/operators, along with some other operators you'll need later.
+import { catchError, map, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HEROES } from './mock-heroes';
 import { Hero } from './hero';
@@ -21,7 +24,11 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class HeroService {
 
-  constructor() { }
+  private heroesUrl = 'api/heroes';  // URL to web api		
+
+  constructor(
+  	private http: HttpClient
+  ) { }
 
  //  getHeroes(): Hero[] {
 	// return HEROES;

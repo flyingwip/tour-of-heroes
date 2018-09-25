@@ -5,6 +5,11 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HeroService } from '../hero.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
+// HttpClientModule is needed when HttpClient is provided
+// see hero-service.ts
+import { HttpClientModule } from '@angular/common/http';
+
+
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
   let fixture: ComponentFixture<HeroesComponent>;
@@ -12,7 +17,7 @@ describe('HeroesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroesComponent, HeroDetailComponent ],
-      imports: [FormsModule, RouterTestingModule],
+      imports: [FormsModule, RouterTestingModule, HttpClientModule],
       providers:[HeroService]
     })
     .compileComponents();

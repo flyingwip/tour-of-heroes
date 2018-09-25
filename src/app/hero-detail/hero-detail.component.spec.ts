@@ -9,6 +9,12 @@ import { HeroService }  from '../hero.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
 
+// HttpClientModule is needed when HttpClient is provided
+// see hero-service.ts
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 describe('HeroDetailComponent', () => {
   let component: HeroDetailComponent;
   let fixture: ComponentFixture<HeroDetailComponent>;
@@ -25,7 +31,7 @@ describe('HeroDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroDetailComponent ],  
-      imports: [FormsModule, RouterTestingModule], // RouterTestingModule for routerLink 
+      imports: [FormsModule, RouterTestingModule, HttpClientModule], // RouterTestingModule for routerLink 
       providers: [ Location, HeroService]
     })
     .compileComponents();

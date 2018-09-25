@@ -10,13 +10,15 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 //
 import { HeroService } from './hero.service';
 import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    DashboardComponent
   ],
   // imports array, which contains a list of external modules that the app needs.
   imports: [

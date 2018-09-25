@@ -3,6 +3,7 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HeroService } from '../hero.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -11,7 +12,7 @@ describe('HeroesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroesComponent, HeroDetailComponent ],
-      imports: [FormsModule],
+      imports: [FormsModule, RouterTestingModule],
       providers:[HeroService]
     })
     .compileComponents();

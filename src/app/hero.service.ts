@@ -8,6 +8,8 @@ import { Hero } from './hero';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
 
+import { HttpModule } from '@angular/http'; 
+
 
 // Dependency injection (DI), is an important application design pattern
 /*

@@ -12,10 +12,15 @@ import { HeroService } from './hero.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-// http
-import { HttpClientModule }    from '@angular/common/http';
+// nodig voor 'ERROR Error: Uncaught (in promise): Error: StaticInjectorError(AppModule)[HeroService -> HttpClient]:'
+import { HttpClientModule }    from '@angular/common/http'; 
+
+//
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { HttpModule } from '@angular/http'; 
+
+
 
 @NgModule({
   // The HeroesComponent is declared in the @NgModule.declarations array.
@@ -29,6 +34,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
